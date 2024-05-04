@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Xue DAO",
   description: "Xue DAO, a student-run DAO for students.",
   icons: {
-    icon: "/logo-square.png",
+    icon: "/logo.png",
   },
 };
 

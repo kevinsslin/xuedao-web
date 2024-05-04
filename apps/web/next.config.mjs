@@ -12,7 +12,6 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig = {
-  output: 'export',
   reactStrictMode: true,
   swcMinify: true,
   webpack: config => {
@@ -20,7 +19,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    unoptimized: true,
+    unoptimized: false,
     formats: ['image/avif', 'image/webp'],
   },
 };
