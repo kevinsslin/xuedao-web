@@ -7,7 +7,7 @@ import Link from "next/link";
 export function Events() {
   return (
     <Box
-      className="w-full bg-gradient-to-b from-event to-event2 py-12 sm:py-20 md:py-24 lg:py-28 xl:py-32 px-10"
+      className="w-full bg-gradient-to-b from-event to-event2 py-12 sm:py-20 md:py-24 lg:py-28 xl:py-0 px-10"
       component="section"
     >
       <Image
@@ -17,20 +17,19 @@ export function Events() {
         alt="events header"
         className="items-center justify-center xl:ml-16"
       />
-      <Grid container spacing={6}>
+      <Grid container spacing={12}>
         {/* Column 1: 50% width */}
         <Grid item xs={12} md={6}>
           <ReactSwipeableViews />
         </Grid>
         {/* Column 2: 50% width */}
-        <Grid item xs={12} md={6} className="gap-y-10">
+        <Grid item xs={12} md={6}>
           {/* Row 1: 30% height */}
           <Grid
             container
             item
             xs={12}
-            style={{ height: "30%" }}
-            className="flex xl:flex-col pt-5"
+            className="flex xl:flex-col h-1/4 xl:h-28 xl:pt-5"
           >
             <Typography variant="h5" className="font-bold" align="left">
               We Hack!
@@ -44,8 +43,7 @@ export function Events() {
             container
             item
             xs={12}
-            style={{ height: "30%" }}
-            className="flex xl:flex-col"
+            className="flex xl:flex-col h-1/4 xl:h-28"
           >
             <Typography variant="h5" className="font-bold" align="left">
               We Learn!
@@ -60,10 +58,9 @@ export function Events() {
             container
             item
             xs={12}
-            style={{ height: "30%" }}
-            className="flex xl:flex-col"
+            className="flex xl:flex-col h-1/4 xl:h-28 my-8 xl:my-0"
           >
-            <Typography variant="h5" className="font-bold" align="left">
+            <Typography variant="h5" className="font-bold" align="left" maxWidth={500}>
               We Connect!
             </Typography>
             <Typography className="max-w-[550px] text-black ml-5" align="left">
@@ -76,8 +73,7 @@ export function Events() {
             container
             item
             xs={12}
-            style={{ height: "10%" }}
-            className="pt-5"
+            className="pt-10 xl:pt-0 h-1/4 xl:h-28"
           >
             <Link href={"https://linktr.ee/xuedaoconnect/"}>
               <Button className="border-4 bg-xuedao_orange hover:shadow-[-18px_25px_14px_-10px_rgba(204,204,204,0.82)] hover:bg-xuedao_orange rounded-xl text-xs md:text-sm lg:text-base xl:text-lg text-black font-bold h-10 xl:h-12">

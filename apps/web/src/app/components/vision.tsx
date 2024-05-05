@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Paper, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { UniversityType } from "@/models/types/uiTypes";
 
@@ -8,12 +8,17 @@ const university: UniversityType[] = [
   { id: 2, name: "un2" },
   { id: 3, name: "un3" },
   { id: 4, name: "un4" },
+  { id: 5, name: "un5" },
+  { id: 6, name: "un6" },
+  { id: 7, name: "un7" },
+  { id: 8, name: "un8" },
+  { id: 9, name: "un9" },
+  { id: 10, name: "un10" },
 ];
 
 export function Vision() {
   return (
     <Box
-      id="vision"
       className="w-full bg-gradient-to-b from-vision to-vision2 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32"
       component="section"
     >
@@ -60,33 +65,19 @@ export function Vision() {
               The Contributor Team of XueDAO is currently formed by students
               from 9 universities in Taiwan:
             </Typography>
-            <Box className="sm:py-2 flex flex-col">
-              <Box className="border-l-4 border-yellow-400 sm:w-auto sm:border-l-4 sm:pl-8 sm:ml-4 sm:py-2">
-                <Grid
-                  container
-                  spacing={2}
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  {university.map((name, id) => (
-                    <Grid item key={id} xs={8} sm={8} md={6} lg={6}>
-                      <Image
-                        src={`/${university[id].name}.png`}
-                        alt={university[id].name}
-                        width={1000}
-                        height={400}
-                      />
-                    </Grid>
-                  ))}
+            <Box className="w-full border-l-4 border-xuedao_yellow sm:w-auto sm:border-l-4 pl-8 sm:ml-4 sm:py-2">
+            <Grid container spacing={2} alignItems="center" justifyContent="center" className="ml-5">
+              {university.map((name, id) => (
+                <Grid key={id} item xs={12} sm={6} md={4} lg={2}>
+                  <Image
+                    src={`/${university[id].name}.png`}
+                    alt={university[id].name}
+                    width={500}
+                    height={200}
+                  />
                 </Grid>
-                <Image
-                  src="/un5.png"
-                  alt="NTUT"
-                  width={350}
-                  height={200}
-                  className="ml-20 sm:ml-16 md:ml-20 lg:ml-0 w-24 h-auto sm:w-72"
-                />
-              </Box>
+              ))}
+            </Grid>
             </Box>
           </Box>
         </Box>

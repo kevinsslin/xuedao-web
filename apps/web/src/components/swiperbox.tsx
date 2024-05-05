@@ -3,30 +3,12 @@
 import React, { useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-
 import Image from "next/image";
 import { Box } from "@mui/material";
-import { ImageType } from "@/models/types/uiTypes";
 
 const AutoPlaySwipeableViews  = autoPlay(SwipeableViews);
 
-const images: ImageType[] = [
-  {
-    index: 1,
-    imgPath: "/a.png",
-    label: "a",
-  },
-  {
-    index: 2,
-    imgPath: "/b.png",
-    label: "b",
-  },
-  {
-    index: 3,
-    imgPath: "/c.png",
-    label: "c",
-  },
-];
+const imageArray = Array.from({ length: 76 }, (_, index) => `/events-photo/${index + 1}.png`);
 
 export function ReactSwipeableViews() {
   const [index, setIndex] = useState(0);
@@ -43,11 +25,11 @@ export function ReactSwipeableViews() {
     axis="x"
     enableMouseEvents
   >
-    {images.map((image, index) => (
+    {imageArray.map((image, index) => (
       <Box key={index} className="rounded-3xl border">
         <Image
-          src={image.imgPath}
-          alt={image.label}
+          src={image}
+          alt={`Image ${index + 1}`}
           width={800}
           height={600}
           className="w-full rounded-3xl"
