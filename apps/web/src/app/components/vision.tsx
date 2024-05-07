@@ -17,6 +17,15 @@ const university: UniversityType[] = [
 ];
 
 export function Vision() {
+  const chunkedUniversity = university.reduce((resultArray: Array<Array<any>>, item, index) => {
+    const chunkIndex = Math.floor(index / 5);
+    if (!resultArray[chunkIndex]) {
+      resultArray[chunkIndex] = [];
+    }
+    resultArray[chunkIndex].push(item);
+    return resultArray;
+  }, []);
+
   return (
     <Box
       className="w-full bg-gradient-to-b from-vision to-vision2 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32"
@@ -66,18 +75,20 @@ export function Vision() {
               from 9 universities in Taiwan:
             </Typography>
             <Box className="w-full border-l-4 border-xuedao_yellow sm:w-auto sm:border-l-4 pl-8 sm:ml-4 sm:py-2">
-            <Grid container spacing={2} alignItems="center" justifyContent="center" className="ml-5">
-              {university.map((name, id) => (
-                <Grid key={id} item xs={12} sm={6} md={4} lg={2}>
-                  <Image
-                    src={`/${university[id].name}.png`}
-                    alt={university[id].name}
-                    width={500}
-                    height={200}
-                  />
+              {chunkedUniversity.map((row, rowIndex) => (
+                <Grid key={rowIndex} container spacing={2} alignItems="center" justifyContent="start" className="xl:ml-5">
+                  {row.map((item, itemIndex) => (
+                    <Grid key={itemIndex} item xs={12} sm={6} md={4} lg={2}>
+                      <Image
+                        src={`/${item.name}.png`}
+                        alt={item.name}
+                        width={500}
+                        height={200}
+                      />
+                    </Grid>
+                  ))}
                 </Grid>
               ))}
-            </Grid>
             </Box>
           </Box>
         </Box>

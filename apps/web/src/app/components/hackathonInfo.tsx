@@ -14,7 +14,7 @@ export function HackathonInfo() {
           <Grid item xs={12} sm={6}>
             <Image
               src={"/hackathonInfo.png"}
-              className="border rounded-3xl bg-white w-full h-full"
+              className="rounded-3xl"
               width={800}
               height={500}
               alt="HackathonInfo"
@@ -22,15 +22,11 @@ export function HackathonInfo() {
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Box className="border-4 border-black rounded-3xl bg-white py-5 px-5 h-full justify-center items-center flex flex-col gap-10">
-              <Image
-                className="items-center xl:ml-24"
-                src={"/hackathon_text.png"}
-                width={500}
-                height={600}
-                alt="hk text"
-              />
-              <Link href={"https://discord.gg/G2V7G7FN"}>
+            <Box className="border-4 border-black rounded-3xl bg-white py-5 xl:px-8 h-full justify-center items-center flex flex-col">
+              <Typography variant="h3" className="font-bold text-2xl xl:text-4xl">XueDAO CONNECT</Typography>
+              <Typography variant="h4" className="font-bold text-2xl xl:text-4xl">Student-only Hackathon</Typography>
+              <Typography className="xl:px-16 xl:py-10 xl:text-2xl px-2 py-2">Co-hosting with EduX and BuZhiDAO, we are delivering the very first student-only hackathon in Taiwan in May-July 2024!</Typography>
+              <Link href={"https://discord.gg/G2V7G7FN"} className="p-5">
                 <Button className="border-4 bg-xuedao_yellow hover:shadow-[-18px_25px_14px_-10px_rgba(204,204,204,0.82)] hover:bg-xuedao_yellow rounded-xl p-1 text-xs md:text-sm lg:text-base xl:text-lg text-black font-bold h-10 xl:h-12">
                   Join our Hackathon Discord now!
                 </Button>
