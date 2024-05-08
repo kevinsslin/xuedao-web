@@ -23,16 +23,17 @@ export function ReactSwipeableViews() {
     index={index}
     onChangeIndex={handleChangeIndex}
     axis="x"
+    animateHeight={true}
     enableMouseEvents
   >
     {imageArray.map((image, index) => (
-      <Box key={index} className="rounded-3xl border">
+      <Box key={index} className="rounded-3xl justify-center flex">
         <Image
           src={image}
           alt={`Image ${index + 1}`}
-          width={800}
-          height={600}
-          className="w-full rounded-3xl"
+          className="rounded-3xl"
+          width={500}
+          height={300}
           priority
         />
       </Box>
