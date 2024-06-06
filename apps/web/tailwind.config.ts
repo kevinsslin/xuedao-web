@@ -42,6 +42,9 @@ const config: Config = {
         xuedao_orange: "#FFCE7E",
         joinus_btn: "#FA9382",
       },
+      fontFamily: {
+        sweiGothic: ['SweiGothicCJKtc-Regular', 'sans-serif'],
+      },
     },
   },
   plugins: [],

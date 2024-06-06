@@ -2,7 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.wrapper {
+  @font-face {
+    font-family: SweiGothicCJKtc-Regular;
+    src: url(https://cdn.jsdelivr.net/gh/max32002/swei-gothic@2.129/WebFont/CJK%20TC/SweiGothicCJKtc-Regular.woff2) format("woff2"),
+        url(https://cdn.jsdelivr.net/gh/max32002/swei-gothic@2.129/WebFont/CJK%20TC/SweiGothicCJKtc-Regular.woff) format("woff");
+  }
+
+  html, body {
+    font-family: 'SweiGothicCJKtc-Regular', sans-serif;
+  }
+
+  .wrapper {
     box-sizing: border-box;
     padding: 50px;
     margin: 0;
