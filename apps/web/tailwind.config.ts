@@ -13,7 +13,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fill: {
-        objectFit: 'fill',
+        objectFit: "fill",
       },
       colors: {
         hero: "#DAE4F0",
@@ -43,7 +43,7 @@ const config: Config = {
         joinus_btn: "#FA9382",
       },
       fontFamily: {
-        sweiGothic: ['SweiGothicCJKtc-Regular', 'sans-serif'],
+        sweiGothic: ["SweiGothicCJKtc-Regular", "sans-serif"],
       },
     },
   },

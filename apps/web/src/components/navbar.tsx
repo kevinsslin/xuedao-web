@@ -5,10 +5,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import {
-  Close as CloseIcon,
-  Menu as MenuIcon,
-} from "@mui/icons-material";
+import { Close as CloseIcon, Menu as MenuIcon } from "@mui/icons-material";
 
 import * as DiscordIcon from "../../public/icons-discord.svg";
 import {
@@ -59,14 +56,14 @@ export function Navbar() {
   useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setOpen(false)
+      () => window.innerWidth >= 960 && setOpen(false),
     );
   }, []);
 
   useEffect(() => {
     if (window.location.hash) {
       const element = document.getElementById(
-        window.location.hash.substring(1)
+        window.location.hash.substring(1),
       );
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
@@ -83,14 +80,18 @@ export function Navbar() {
     >
       <Toolbar className="flex justify-between items-center">
         {/* Logo */}
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, my: 2, ml:2 }}>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, my: 2, ml: 2 }}
+        >
           <Link href="/">
             <Image
               src="/XD_logo.png"
               alt="Xue DAO logo"
               width={70}
               height={100}
-              style={{ width: "100px", height: "auto"}}
+              style={{ width: "100px", height: "auto" }}
               priority
             />
           </Link>

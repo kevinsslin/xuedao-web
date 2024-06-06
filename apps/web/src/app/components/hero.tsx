@@ -17,12 +17,13 @@ export function Hero() {
             priority
           />
           <Box className="flex flex-col items-center justify-center gap-4">
-          <Typography
-            variant="h3"
-            className=" align-front text-black text-3xl sm:text-xl md:text-4xl lg:text-5xl pt-8 text-indent"
-          >
-            Show the world that <br/> Taiwanese Students <br/> can <span className="font-bold">BUIDL</span>
-          </Typography>
+            <Typography
+              variant="h3"
+              className=" align-front text-black text-3xl sm:text-xl md:text-4xl lg:text-5xl pt-8 text-indent"
+            >
+              Show the world that <br /> Taiwanese Students <br /> can{" "}
+              <span className="font-bold">BUIDL</span>
+            </Typography>
           </Box>
           <Box className="ml-8 sm:ml-20 px-10 min-[600px] flex flex-col sm:w-48 sm:flex-row pt-12">
             <Link
