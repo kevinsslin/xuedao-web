@@ -8,7 +8,7 @@ export function Partner() {
   return (
     <Box className="flex w-full bg-gradient-to-b from-partner to-partner2 md:py-8 lg:py-12">
       <Box className="container flex flex-col mx-auto px-4 md:px-6">
-        <Box className="items-center justify-center space-y-4 text-center text-3xl font-bold sm:text-6xl">
+        <Box className="my-10 items-center justify-center space-y-4 text-center text-3xl font-bold sm:text-6xl">
           We bridge students with the Industry
         </Box>
         <Box className="flex flex-col xl:flex-row justify-center items-center p-5 gap-5">

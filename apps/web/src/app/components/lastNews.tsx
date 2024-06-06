@@ -51,8 +51,8 @@ export function LastNews() {
   return (
     <Box className="flex w-full bg-gradient-to-b from-lastnews to-lastnews2 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
       <Box className="container flex flex-col mx-auto px-4 md:px-6">
-        <Box className="items-center justify-center space-y-4 text-center mb-4">
-          <Typography variant="h3">
+        <Box className="items-center justify-center space-y-4 text-center mb-16">
+          <Typography variant="h3" className="font-bold">
             Last News
           </Typography>
         </Box>
@@ -68,7 +68,7 @@ export function LastNews() {
                   className="instagram-media w-full max-w-xs md:max-w-sm lg:max-w-md"
                   data-instgrm-permalink={postUrl}
                   data-instgrm-version="14"
-                  style={{ margin: 'auto' }}
+                  style={{ margin: "auto" }}
                 />
               </div>
             ))}
