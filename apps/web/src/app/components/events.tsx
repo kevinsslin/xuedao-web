@@ -31,7 +31,7 @@ export function Events() {
             xs={12}
             className="flex xl:flex-col h-1/4 xl:h-28 xl:pt-5"
           >
-            <Typography variant="h5" className="font-bold" align="left">
+            <Typography variant="h4" className="font-bold" align="left">
               We Hack!
             </Typography>
             <Typography className="max-w-[550px] text-black ml-5" align="left">
@@ -45,7 +45,7 @@ export function Events() {
             xs={12}
             className="flex xl:flex-col h-1/4 xl:h-28"
           >
-            <Typography variant="h5" className="font-bold" align="left">
+            <Typography variant="h4" className="font-bold" align="left">
               We Learn!
             </Typography>
             <Typography className="max-w-[550px] text-black ml-5" align="left">
@@ -60,7 +60,12 @@ export function Events() {
             xs={12}
             className="flex xl:flex-col h-1/4 xl:h-28 my-8 xl:my-0"
           >
-            <Typography variant="h5" className="font-bold" align="left" maxWidth={500}>
+            <Typography
+              variant="h4"
+              className="font-bold"
+              align="left"
+              maxWidth={500}
+            >
               We Connect!
             </Typography>
             <Typography className="max-w-[550px] text-black ml-5" align="left">
@@ -69,14 +74,9 @@ export function Events() {
             </Typography>
           </Grid>
           {/* Row 4: 10% height */}
-          <Grid
-            container
-            item
-            xs={12}
-            className="pt-10 xl:pt-0 h-1/4 xl:h-28"
-          >
+          <Grid container item xs={12} className="pt-10 xl:pt-0 h-1/4 xl:h-28">
             <Link href={"https://linktr.ee/xuedaoconnect/"}>
-              <Button className="border-4 bg-xuedao_orange hover:shadow-[-18px_25px_14px_-10px_rgba(204,204,204,0.82)] hover:bg-xuedao_orange rounded-xl text-xs md:text-sm lg:text-base xl:text-lg text-black font-bold h-10 xl:h-12">
+              <Button className="border-4 p-2 bg-xuedao_orange hover:shadow-[-18px_25px_14px_-10px_rgba(204,204,204,0.82)] hover:bg-xuedao_orange rounded-xl text-xs md:text-sm lg:text-base xl:text-lg text-black font-bold h-10 xl:h-12">
                 For More Events Information
               </Button>
             </Link>

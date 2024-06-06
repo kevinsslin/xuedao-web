@@ -36,7 +36,6 @@ export function Contributor_Team() {
     { id: 26, name: "Debby", subtitle: "NTU | LING", type: "Community" },
     { id: 27, name: "Bill", subtitle: "NCCU | FIN", type: "Community" },
     { id: 28, name: "Ken", subtitle: "NTUT | IFM", type: "Community" },
-    { id: 29, name: "Jordan", subtitle: "NTU | SM", type: "Community" },
   ];
   const builder = members.slice(0, 14);
   const operation = members.slice(14, 18);
@@ -57,12 +56,11 @@ export function Contributor_Team() {
         }}
       >
         <Avatar
-        src={`/core-contributors/${name}.webp`}
-        sx={{width: 50, height: 50}}
-        className="w-full h-full object-cover"
-        alt={name}
-      />
-
+          src={`/core-contributors/${name}.webp`}
+          sx={{ width: 50, height: 50 }}
+          className="w-full h-full object-cover"
+          alt={name}
+        />
       </Box>
       <Typography className="font-bold text-sm mt-2">{name}</Typography>
       <Typography className="font-bold text-xs">{subtitle}</Typography>
@@ -96,26 +94,26 @@ export function Contributor_Team() {
           <Box className="flex flex-col items-center border-4 border-black p-5 xl:w-1/5 w-full h-full bg-white rounded-3xl gap-8">
             <Typography variant="h6">Operation (O)</Typography>
             <Box className="flex flex-wrap justify-center w-full p-5 gap-5">
-            {operation.map((member) => (
+              {operation.map((member) => (
                 <Member
                   key={member.id}
                   name={member.name}
                   subtitle={member.subtitle}
                 />
               ))}
-              </Box>
+            </Box>
           </Box>
           <Box className="flex flex-col justify-center items-center text-center border-4 border-black p-2 xl:w-1/3 w-full h-full bg-white rounded-3xl">
             <Typography variant="h6">Community (C)</Typography>
             <Box className="flex flex-wrap justify-center w-full p-5 gap-5">
-            {community.map((member) => (
+              {community.map((member) => (
                 <Member
                   key={member.id}
                   name={member.name}
                   subtitle={member.subtitle}
                 />
               ))}
-              </Box>
+            </Box>
           </Box>
         </Box>
       </Box>

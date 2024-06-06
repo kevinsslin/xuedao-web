@@ -1,26 +1,82 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { Box, Typography, Grid, CircularProgress } from "@mui/material";
 
-import { Box, Typography } from "@mui/material";
-import WestIcon from "@mui/icons-material/West";
-import EastIcon from "@mui/icons-material/East";
-import ReplayIcon from "@mui/icons-material/Replay";
-import LockIcon from "@mui/icons-material/Lock";
-import Image from "next/image";
-import Link from "next/link";
+const instagramPosts = [
+  "https://www.instagram.com/p/C71WI0Yy5Sg",
+  "https://www.instagram.com/p/C7wVuSCS3Rb",
+  "https://www.instagram.com/p/C7l9OAoyeSo",
+];
 
 export function LastNews() {
+  const [loading, setLoading] = useState(true);
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    const loadInstagramScript = () => {
+      if (scriptRef.current && document.body.contains(scriptRef.current)) {
+        document.body.removeChild(scriptRef.current);
+        scriptRef.current = null;
+      }
+
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "//www.instagram.com/embed.js";
+      script.onload = () => {
+        setLoading(false);
+        setScriptLoaded(true);
+      };
+
+      document.body.appendChild(script);
+      scriptRef.current = script;
+    };
+
+    loadInstagramScript();
+
+    return () => {
+      if (scriptRef.current && document.body.contains(scriptRef.current)) {
+        document.body.removeChild(scriptRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!loading && scriptLoaded) {
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
+      }
+    }
+  }, [loading, scriptLoaded]);
+
   return (
-    <Box className="flex w-full bg-gradient-to-b from-lastnews to-lastnews2 md:py-8 lg:py-12">
+    <Box className="flex w-full bg-gradient-to-b from-lastnews to-lastnews2 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
       <Box className="container flex flex-col mx-auto px-4 md:px-6">
-        <Box className="items-center justify-center space-y-4 text-center">
-          <Typography variant="h3">Last News</Typography>
+        <Box className="items-center justify-center space-y-4 text-center mb-16">
+          <Typography variant="h3" className="font-bold">
+            Last News
+          </Typography>
         </Box>
-        <Box className="flex flex-col xl:flex-row justify-center items-center p-5 gap-5 px-auto">
-          <Image src="/news1.png" width={400} height={400} alt="news1" />
-          <Image src="/news2.png" width={400} height={400} alt="news2" />
-          <Image src="/news3.png" width={400} height={400} alt="news3" />
-        </Box>
+        {loading ? (
+          <Box className="flex justify-center items-center h-[50vh]">
+            <CircularProgress />
+          </Box>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {instagramPosts.map((postUrl, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <blockquote
+                  className="instagram-media w-full max-w-xs md:max-w-sm lg:max-w-md"
+                  data-instgrm-permalink={postUrl}
+                  data-instgrm-version="14"
+                  style={{ margin: "auto" }}
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </Box>
     </Box>
   );
 }
+
+export default LastNews;

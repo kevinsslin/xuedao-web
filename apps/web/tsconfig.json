@@ -21,6 +21,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../../../Konan/apps/web/src/models/types/apiTypes.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "../../../Konan/apps/web/src/models/types/apiTypes.ts"
+  ],
   "exclude": ["node_modules"]
 }
