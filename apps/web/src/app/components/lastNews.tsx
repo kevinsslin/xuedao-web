@@ -1,47 +1,79 @@
-import React, { useEffect, useRef } from "react";
-import { Box, Typography, Grid } from "@mui/material";
+import React, { useEffect, useState, useRef } from "react";
+import { Box, Typography, Grid, CircularProgress } from "@mui/material";
 
 const instagramPosts = [
-  "https://www.instagram.com/p/C63ovPzykM4",
-  "https://www.instagram.com/p/C61NAC4roZ9",
-  "https://www.instagram.com/p/C6v6V9zNyym",
+  "https://www.instagram.com/p/C71WI0Yy5Sg",
+  "https://www.instagram.com/p/C7wVuSCS3Rb",
+  "https://www.instagram.com/p/C7l9OAoyeSo",
 ];
 
 export function LastNews() {
+  const [loading, setLoading] = useState(true);
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
   useEffect(() => {
-    // Create the script tag for Instagram embed
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "//www.instagram.com/embed.js";
+    const loadInstagramScript = () => {
+      if (scriptRef.current && document.body.contains(scriptRef.current)) {
+        document.body.removeChild(scriptRef.current);
+        scriptRef.current = null;
+      }
 
-    // Append the script to the body
-    document.body.appendChild(script);
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "//www.instagram.com/embed.js";
+      script.onload = () => {
+        setLoading(false);
+        setScriptLoaded(true);
+      };
 
-    // Cleanup function to remove the script when the component unmounts
+      document.body.appendChild(script);
+      scriptRef.current = script;
+    };
+
+    loadInstagramScript();
+
     return () => {
-      document.body.removeChild(script);
+      if (scriptRef.current && document.body.contains(scriptRef.current)) {
+        document.body.removeChild(scriptRef.current);
+      }
     };
   }, []);
 
+  useEffect(() => {
+    if (!loading && scriptLoaded) {
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
+      }
+    }
+  }, [loading, scriptLoaded]);
+
   return (
-    <Box className="flex w-full bg-gradient-to-b from-lastnews to-lastnews2 md:py-8 lg:py-12">
+    <Box className="flex w-full bg-gradient-to-b from-lastnews to-lastnews2 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
       <Box className="container flex flex-col mx-auto px-4 md:px-6">
-        <Box className="items-center justify-center space-y-4 text-center">
-          <Typography variant="h3">Last News</Typography>
+        <Box className="items-center justify-center space-y-4 text-center mb-4">
+          <Typography variant="h3">
+            Last News
+          </Typography>
         </Box>
-        <Box className="gap-5 py-5 px-5">
-            <Grid container spacing={2}>
-                {instagramPosts.map((postUrl, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
-                        <blockquote
-                            className="instagram-media w-full"
-                            data-instgrm-permalink={postUrl}
-                            data-instgrm-version="14"
-                        />
-                    </Grid>
-                ))}
-            </Grid>
-        </Box>
+        {loading ? (
+          <Box className="flex justify-center items-center h-[50vh]">
+            <CircularProgress />
+          </Box>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {instagramPosts.map((postUrl, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <blockquote
+                  className="instagram-media w-full max-w-xs md:max-w-sm lg:max-w-md"
+                  data-instgrm-permalink={postUrl}
+                  data-instgrm-version="14"
+                  style={{ margin: 'auto' }}
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </Box>
     </Box>
   );

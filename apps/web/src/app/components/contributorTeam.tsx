@@ -35,8 +35,7 @@ export function Contributor_Team() {
     { id: 25, name: "Itarn", subtitle: "NTHU | MS", type: "Community" },
     { id: 26, name: "Debby", subtitle: "NTU | LING", type: "Community" },
     { id: 27, name: "Bill", subtitle: "NCCU | FIN", type: "Community" },
-    { id: 28, name: "Ken", subtitle: "NTUT | IFM", type: "Community" },
-    { id: 29, name: "Jordan", subtitle: "NTU | SM", type: "Community" },
+    { id: 28, name: "Ken", subtitle: "NTUT | IFM", type: "Community" }
   ];
   const builder = members.slice(0, 14);
   const operation = members.slice(14, 18);

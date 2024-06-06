@@ -11,19 +11,19 @@ export function Hero() {
           <Image
             src="/XueDAO_logo.png"
             alt="xuedao logo"
-            className="px-6"
+            className="px-6 pt-4"
             width={800}
-            height={200}
+            height={400}
             priority
           />
-          <Image
-            src="/heroText.png"
-            alt="Text"
-            className="px-6"
-            width={800}
-            height={200}
-            priority
-          />
+          <Box className="flex flex-col items-center justify-center gap-4">
+          <Typography
+            variant="h3"
+            className=" align-front text-black text-3xl sm:text-xl md:text-4xl lg:text-5xl pt-8 text-indent"
+          >
+            Show the world that <br/> Taiwanese Students <br/> can <span className="font-bold">BUIDL</span>
+          </Typography>
+          </Box>
           <Box className="ml-8 sm:ml-20 px-10 min-[600px] flex flex-col sm:w-48 sm:flex-row pt-12">
             <Link
               href="https://t.me/+0Rvawr400uNhNTY1"
@@ -32,9 +32,9 @@ export function Hero() {
             >
               <Button
                 variant="contained"
-                className="inline-flex h-16 w-72 sm:w-96 items-center justify-center border-4 rounded-full hover:shadow-[-18px_25px_14px_-10px_rgba(204,204,204,0.82)] hover:bg-white bg-white px-12 text-sm sm:text-lg font-bold text-black shadow focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+                className="inline-flex h-16 w-72 sm:w-96 items-center justify-center border-4 rounded-full hover:shadow-[-18px_25px_14px_-10px_rgba(204,204,204,0.82)] hover:bg-white bg-white px-12 text-lg sm:text-lg font-bold text-black shadow focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
               >
-                Join our community NOW
+                Join NOW
               </Button>
             </Link>
           </Box>

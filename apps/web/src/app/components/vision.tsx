@@ -13,18 +13,20 @@ const university: UniversityType[] = [
   { id: 7, name: "un7" },
   { id: 8, name: "un8" },
   { id: 9, name: "un9" },
-  { id: 10, name: "un10" },
 ];
 
 export function Vision() {
-  const chunkedUniversity = university.reduce((resultArray: Array<Array<any>>, item, index) => {
-    const chunkIndex = Math.floor(index / 5);
-    if (!resultArray[chunkIndex]) {
-      resultArray[chunkIndex] = [];
-    }
-    resultArray[chunkIndex].push(item);
-    return resultArray;
-  }, []);
+  const chunkedUniversity = university.reduce(
+    (resultArray: Array<Array<any>>, item, index) => {
+      const chunkIndex = Math.floor(index / 5);
+      if (!resultArray[chunkIndex]) {
+        resultArray[chunkIndex] = [];
+      }
+      resultArray[chunkIndex].push(item);
+      return resultArray;
+    },
+    []
+  );
 
   return (
     <Box
@@ -33,8 +35,8 @@ export function Vision() {
     >
       <Box className="container mx-auto px-10 sm:flex-row sm:px-12 md:px-8 lg:px-10 xl:px-12">
         <Box className="flex flex-col space-y-4">
-          <Box className="space-y-2 flex flex-col justify-start gap-10">
-            <Typography className="text-3xl sm:h-32 text-center font-bold sm:py-9 sm:text-5xl md:text-4xl border-black border-4 border-solid rounded-full max-w-[300px] sm:max-w-[600px]">
+          <Box className="space-y-2 flex flex-col justify-start gap-5">
+            <Typography className="text-3xl sm:h-20 text-font font-bold sm:py-9 sm:text-5xl md:text-4xl  max-w-[300px] sm:max-w-[600px]">
               WHO is XUEDAO?
             </Typography>
             <Typography
@@ -76,7 +78,14 @@ export function Vision() {
             </Typography>
             <Box className="w-full border-l-4 border-xuedao_yellow sm:w-auto sm:border-l-4 pl-8 sm:ml-4 sm:py-2">
               {chunkedUniversity.map((row, rowIndex) => (
-                <Grid key={rowIndex} container spacing={2} alignItems="center" justifyContent="start" className="xl:ml-5">
+                <Grid
+                  key={rowIndex}
+                  container
+                  spacing={2}
+                  alignItems="center"
+                  justifyContent="start"
+                  className="xl:ml-5"
+                >
                   {row.map((item, itemIndex) => (
                     <Grid key={itemIndex} item xs={12} sm={6} md={4} lg={2}>
                       <Image

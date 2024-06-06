@@ -8,7 +8,7 @@ import { Box } from "@mui/material";
 
 const AutoPlaySwipeableViews  = autoPlay(SwipeableViews);
 
-const imageArray = Array.from({ length: 76 }, (_, index) => `/events-photo/${index + 1}.png`);
+const imageArray = Array.from({ length: 10 }, (_, index) => `/events-photo/${index + 1}.png`);
 
 export function ReactSwipeableViews() {
   const [index, setIndex] = useState(0);
@@ -27,13 +27,13 @@ export function ReactSwipeableViews() {
     enableMouseEvents
   >
     {imageArray.map((image, index) => (
-      <Box key={index} className="rounded-3xl justify-center flex">
+      <Box key={index} className="rounded-3xl justify-center flex mt-6">
         <Image
           src={image}
           alt={`Image ${index + 1}`}
           className="rounded-3xl"
-          width={500}
-          height={300}
+          width={550}
+          height={350}
           priority
         />
       </Box>
