@@ -38,9 +38,14 @@ export function HackathonInfo() {
                 Student-only Hackathon
               </Typography>
               <Typography className="xl:px-16 xl:py-5 xl:text-2xl px-2 py-2">
-                Co-hosting with EduX and BuZhiDAO, we are delivering the very
-                first student-only hackathon in Taiwan in May-July 2024!
+                Co-hosting with BuZhiDAO, we are delivering the very
+                first student-only hackathon in Taiwan in May-June 2024!
               </Typography>
+              <Link href={"https://www.moledao.io/#/event/3ae0e7d4-8ca4-43ca-9ac5-1afd47f97bfb"} className="p-5">
+                <Button className="border-4 p-2 bg-xuedao_pink hover:shadow-[-18px_25px_14px_-10px_rgba(204,204,204,0.82)] hover:bg-xuedao_yellow rounded-xl p-1 text-xs md:text-sm lg:text-base xl:text-lg text-black font-bold h-10 xl:h-12">
+                  Register Hackathon now
+                </Button>
+              </Link>
               <Link href={"https://discord.gg/ZzFuAv9u3A"} className="p-5">
                 <Button className="border-4 p-2 bg-xuedao_yellow hover:shadow-[-18px_25px_14px_-10px_rgba(204,204,204,0.82)] hover:bg-xuedao_yellow rounded-xl p-1 text-xs md:text-sm lg:text-base xl:text-lg text-black font-bold h-10 xl:h-12">
                   Join Hackathon Discord now

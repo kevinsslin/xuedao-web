@@ -85,7 +85,7 @@ export function Vision() {
                   className="xl:ml-5"
                 >
                   {row.map((item, itemIndex) => (
-                    <Grid key={itemIndex} item xs={12} sm={6} md={4} lg={2}>
+                    <Grid key={itemIndex} item  xs={12} sm={6} md={4} lg={2}>
                       <Image
                         src={`/${item.name}.png`}
                         alt={item.name}
@@ -98,17 +98,6 @@ export function Vision() {
               ))}
             </Box>
           </Box>
-        </Box>
-      </Box>
-      <Box className="relative">
-        <Box className="absolute bottom-0 right-0">
-          <Image
-            src="/vision_cloud.png"
-            alt="cloud"
-            width={300}
-            height={300}
-            className="w-24 h-auto sm:w-32 md:w-40 lg:w-48 xl:w-56"
-          />
         </Box>
       </Box>
     </Box>

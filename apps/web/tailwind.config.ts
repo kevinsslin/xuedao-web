@@ -39,7 +39,6 @@ const config: Config = {
         xuedao_pink: "#fb9383",
         xuedao_blue: "#95b5dd",
         xuedao_yellow: "#ffce7e",
-        xuedao_orange: "#FFCE7E",
         joinus_btn: "#FA9382",
       },
       fontFamily: {

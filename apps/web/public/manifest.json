@@ -16,73 +16,7 @@
       "purpose": "any"
     },
     {
-      "src": "/bg-bottom.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/bg-top.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/blob-bottom-left.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/blob-bottom-right.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/blob-center.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/blob-secondary.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/blob-top-left.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/blob-top-right.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/blob-white.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
       "src": "/c.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/log-square.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
@@ -178,18 +112,6 @@
       "purpose": "any"
     },
     {
-      "src": "/XD_round.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/XD_white.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
       "src": "/icons-discord.svg",
       "sizes": "144x144",
       "type": "image/svg",
@@ -221,12 +143,6 @@
     },
     {
       "src": "/heroText.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/logo-square.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
@@ -502,18 +418,6 @@
       "purpose": "any"
     },
     {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "512x512",
-      "type": "image/webp",
-      "purpose": "any"
-    },
-    {
-      "src": "/android-chrome-384x384.png",
-      "sizes": "512x512",
-      "type": "image/webp",
-      "purpose": "any"
-    },
-    {
       "src": "/apple-touch-icon.png",
       "sizes": "512x512",
       "type": "image/webp",
@@ -527,18 +431,6 @@
     },
     {
       "src": "/favicon-32x32.png",
-      "sizes": "512x512",
-      "type": "image/webp",
-      "purpose": "any"
-    },
-    {
-      "src": "/mstile-150x150.png",
-      "sizes": "512x512",
-      "type": "image/webp",
-      "purpose": "any"
-    },
-    {
-      "src": "/safari-pinned-tab.svg",
       "sizes": "512x512",
       "type": "image/webp",
       "purpose": "any"
